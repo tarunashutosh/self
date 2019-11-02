@@ -19,7 +19,7 @@ class TreeOrders:
   def inOrder(self):
     self.result = []
 #    print(self.right)
-    def inorder_traverse(self):
+    '''def inorder_traverse(self):
         print(self)
         if self.left == None:
             return []
@@ -27,7 +27,7 @@ class TreeOrders:
         inorder_traverse(self)
         #self.result.append(self.key)
         #inOrder(self.right)
-    inorder_traverse(self)    
+    inorder_traverse(self)'''    
 
     # Finish the implementation
     # You may need to add a new recursive method to do that
@@ -38,7 +38,9 @@ class TreeOrders:
     self.result = []
     # Finish the implementation
     # You may need to add a new recursive method to do that
-                
+    self.result.append(self.key)
+    self.left.preorder()
+    self.right.preorder()
     return self.result
 
   def postOrder(self):
