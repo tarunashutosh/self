@@ -38,9 +38,22 @@ class TreeOrders:
     self.result = []
     # Finish the implementation
     # You may need to add a new recursive method to do that
-    self.result.append(self.key)
+    if self:
+        self.result.append(self.key)
+        self.result += self.preOrder(self.left)
+        self.result += self.preOrder(self.right)
+        
+    '''def preorder_traverse(self):
+        if self:
+            return []
+        print (self.left)
+        preorder_traverse(self)
+        self.result.append(self.key)
+        preorder_traverse(self.right)
+    preorder_traverse(self)'''
+    '''self.result.append(self.key)
     self.left.preorder()
-    self.right.preorder()
+    self.right.preorder()'''
     return self.result
 
   def postOrder(self):
@@ -56,5 +69,5 @@ def main():
 	print(" ".join(str(x) for x in tree.inOrder()))
 	print(" ".join(str(x) for x in tree.preOrder()))
 	print(" ".join(str(x) for x in tree.postOrder()))
-
+#	print (tree.left)
 threading.Thread(target=main).start()
