@@ -4,7 +4,8 @@ from extract_features import extract_features
 from sklearn import metrics
 
 def verify(model, pca, scaler, apply_pca):
-	file_path = '/home/ashutosh/ashutosh/Output_of_NUS_Parse/'
+#def verify():
+	file_path = 'Output_of_NUS_Parse/'
 	file_name = 'Ref_classification_samples2Nov.xlsx'
 	df = pd.read_excel(file_path+file_name, sheet_name='predicted_ref_class_samples')
 	#print (df['predicted'])
@@ -13,10 +14,14 @@ def verify(model, pca, scaler, apply_pca):
 	for ele in df['predicted']:
 		ind_phrases, ind_tags, phrase_position = [], [], []
 		elements=[i for i in ele.split('\n') if len(i)!=0]
+		#print (elements)
+#		break
+
 		for j,i in enumerate(elements):
-			ind_phrases.append(i.split(':')[1])
+			ind_phrases.append(':'.join(i.split(':')[1:]))
 			ind_tags.append(i.split(':')[0])
 			phrase_position.append(j)
+		#	print (':'.join(i.split(':')[1:]), i.split(':')[0], j)
 #	print (ind_phrases[:5], ind_tags[:5], phrase_position[:5])
 		test_features = extract_features(ind_phrases, phrase_position, 'testing')
 		if apply_pca == 'y':
@@ -33,3 +38,4 @@ def verify(model, pca, scaler, apply_pca):
 	df.to_excel('Output_of_NUS_Parse/verified_'+file_name, sheet_name='verified')
 	#accuracy = metrics.accuracy_score(ind_tags_overall, pred_tags_overall)
 	#return accuracy
+#verify()
