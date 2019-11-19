@@ -7,13 +7,14 @@ from sklearn.decomposition import PCA
 from sklearn import preprocessing
 from  write_features_labels import write_features_labels
 
-def testing(data, model, pca, scaler, apply_pca):
-	ind_tags_phrases = individual_phrase_tags(data)
+def testing(data, model, pca, scaler, apply_pca, tag_dict):
+	ind_tags_phrases = individual_phrase_tags(data, tag_dict)
 	ind_phrases, ind_tags, phrase_position = [], [], []
 	for i in ind_tags_phrases:
 		ind_phrases.append(i[0].split(',')[1])
 		ind_tags.append(i[0].split(',')[0])
 		phrase_position.append(i[1])
+	print ('test', len(ind_phrases))
 	test_features = extract_features(ind_phrases, phrase_position, 'testing')
 #	write_features_labels('./', ind_phrases, test_features, ind_tags, 'test_features')
 	if apply_pca == 'y':
