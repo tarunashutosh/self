@@ -16,7 +16,7 @@ def testing(data, model, pca, scaler, apply_pca, tag_dict):
 		phrase_position.append(i[1])
 	print ('test', len(ind_phrases))
 	test_features = extract_features(ind_phrases, phrase_position, 'testing')
-#	write_features_labels('./', ind_phrases, test_features, ind_tags, 'test_features')
+	write_features_labels('./', ind_phrases, test_features, ind_tags, 'test_features')
 	if apply_pca == 'y':
 		test_features = scaler.transform(test_features)
 		test_features = pca.transform(test_features)

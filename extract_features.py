@@ -23,7 +23,7 @@ def pos_tags(phrase, position):
 			nums+=1
 		except:
 			continue
-	feat = pos_count + [str(len(words))] + [str(nums)] + [str(position)]#+[len(phrase)]#+[str(position)]
+	feat = pos_count + [str(len(words))] + [str(nums)]  + [str(position)] + [len(phrase)]#+[str(position)]
 	return feat
 
 def extract_features(all_phrases, phrase_position, step):

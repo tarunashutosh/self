@@ -35,7 +35,7 @@ def individual_phrase_tags(data, tag_dict):
 			temp_tag = regex.sub('', temp_tag)
 			temp_tag = tag_dict[temp_tag]
 			
-			regex = re.compile('[^0-9a-zA-Z,%\' - )(]')				
+			regex = re.compile('[^0-9a-zA-Z,%;:.&/\' - )(]')				
 			j=ele-1
 			while citation[j]!='>':
 				temp_phrase+= citation[j]
