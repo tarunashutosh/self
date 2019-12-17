@@ -1,0 +1,7 @@
+<author>P. Godfrey-Smith, </author> <title>“Preface to Chapters 15 and 16,” </title><booktitle>in Adaptive Individuals in Evolving Populations: Models and Algorithms, </booktitle><editor>R. K. Belew and M. Mitchell, Eds. </editor><location>Reading, MA: </location><publisher>Addison Wesley, </publisher><year>1996, </year><pages>pp. 227–231.</pages>
+<author>J. Grefenstette, </author> <title>“Parallel adaptive algorithms for function optimization,” </title> <location>Nashville, TN, </location>, <year>1981.</year>
+<author>J. F. C. Kingman, </author> <title>“A note on the axial symmetry of the disturbance,” </title><journal>Proc. R. Soc. Lond. Ser. A Math. Phys. Sci., </journal><volume>vol. 258, <volume><pages>pp. 87–89, </pages><year>1960.</year>
+<author>R. G. Almond, </author> <title>“Fiducial inference and belief functions,” </title> <year>1991.</year>
+<author>L. R. Hare and K. O’Neill, </author> <title>“Effectiveness and Efficiency in Small Academic Peer Groups,” </title><volume>vol. 31, <volume><pages>pp. 24–53, </pages><year>2000.</year>
+<author>G. Lakoff, </author> <title>“On the Nature of Syntactic Irregularity,” </title><publisher>Indiana University, </publisher><year>1965.</year>
+<author>W. M. Spears and D. Gordon, </author> <title>“Adaptive Strategy Selection for Concept Learning,” </title><proceeding>in Multistrategy Learning (MSL-91) Workshop, </proceeding><year>1991, </year><pages>pp. 231–246.</pages>

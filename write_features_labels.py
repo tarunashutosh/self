@@ -5,7 +5,7 @@ tagdict = load('help/tagsets/upenn_tagset.pickle')
 
 
 def write_features_labels(out_dir, phrases, features, labels, case):
-	columns = tagdict.keys() + ['num_words', 'num_numeric', 'phrase_position']
+	columns = tagdict.keys() + ['num_words', 'num_numeric', 'phrase_position', 'phrase_length']
 	df = pd.DataFrame(features, columns = columns)
 	df.insert(loc=0, column='phrases', value=phrases)
 	df1 = pd.DataFrame(labels, columns = ['label'])

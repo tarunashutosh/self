@@ -12,8 +12,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import preprocessing
 from  write_features_labels import write_features_labels
 
-def training(data, classifier, one_vs_all, apply_pca):
-	ind_tags_phrases = individual_phrase_tags(data)
+def training(data, classifier, one_vs_all, apply_pca, tag_dict):
+	ind_tags_phrases = individual_phrase_tags(data, tag_dict)
 	ind_phrases, ind_tags, phrase_position = [], [], []
 
 
@@ -21,6 +21,8 @@ def training(data, classifier, one_vs_all, apply_pca):
 		ind_phrases.append(i[0].split(',')[1])
 		ind_tags.append(i[0].split(',')[0])
 		phrase_position.append(i[1])
+	print ('train', len(ind_phrases))
+
 	train_features = extract_features(ind_phrases, phrase_position, 'training')
 	write_features_labels('./', ind_phrases, train_features, ind_tags, 'train_features')
 	pca, scaler = '', ''
