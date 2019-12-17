@@ -18,49 +18,35 @@ class TreeOrders:
 
   def inOrder(self):
     self.result = []
-#    print(self.right)
-    '''def inorder_traverse(self):
-        print(self)
-        if self.left == None:
-            return []
-        print(self.left)
-        inorder_traverse(self)
-        #self.result.append(self.key)
-        #inOrder(self.right)
-    inorder_traverse(self)'''    
-
-    # Finish the implementation
-    # You may need to add a new recursive method to do that
-                
+    def inorder_traverse(i):
+        if i==-1:
+            return
+        inorder_traverse(self.left[i])
+        self.result.append(self.key[i])
+        inorder_traverse(self.right[i])
+    inorder_traverse(0)
     return self.result
 
   def preOrder(self):
     self.result = []
-    # Finish the implementation
-    # You may need to add a new recursive method to do that
-    if self:
-        self.result.append(self.key)
-        self.result += self.preOrder(self.left)
-        self.result += self.preOrder(self.right)
-        
-    '''def preorder_traverse(self):
-        if self:
-            return []
-        print (self.left)
-        preorder_traverse(self)
-        self.result.append(self.key)
-        preorder_traverse(self.right)
-    preorder_traverse(self)'''
-    '''self.result.append(self.key)
-    self.left.preorder()
-    self.right.preorder()'''
+    def preorder_traverse(i):
+        if i==-1:
+            return
+        self.result.append(self.key[i])
+        preorder_traverse(self.left[i])
+        preorder_traverse(self.right[i])
+    preorder_traverse(0)        
     return self.result
 
   def postOrder(self):
     self.result = []
-    # Finish the implementation
-    # You may need to add a new recursive method to do that
-                
+    def postorder_traverse(i):
+        if i==-1:
+            return
+        postorder_traverse(self.left[i])
+        postorder_traverse(self.right[i])
+        self.result.append(self.key[i])
+    postorder_traverse(0)
     return self.result
 
 def main():
@@ -69,5 +55,4 @@ def main():
 	print(" ".join(str(x) for x in tree.inOrder()))
 	print(" ".join(str(x) for x in tree.preOrder()))
 	print(" ".join(str(x) for x in tree.postOrder()))
-#	print (tree.left)
 threading.Thread(target=main).start()
